@@ -2,3 +2,7 @@
 .claude/
 node_modules/
 *.log
+admin/.env
+admin/tmp/
+uploads/
+data/*.json

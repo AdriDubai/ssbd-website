@@ -27,6 +27,15 @@
 
   <link rel="stylesheet" href="css/styles.css">
 
+  <!-- Language switcher styles -->
+  <style>
+    .lang-switch{display:flex;align-items:center;gap:0;margin-left:16px}
+    .lang-switch__btn{background:none;border:none;color:rgba(255,255,255,.4);font-size:.8rem;font-weight:600;letter-spacing:.04em;padding:6px 8px;cursor:pointer;transition:color .2s}
+    .lang-switch__btn.active{color:#E8FF47}
+    .lang-switch__btn:hover{color:rgba(255,255,255,.8)}
+    .lang-switch__sep{color:rgba(255,255,255,.15);font-size:.75rem;user-select:none}
+  </style>
+
   <!-- Schema.org -->
   <script type="application/ld+json">
   {
@@ -58,16 +67,21 @@
       </a>
       <div class="nav__links">
         <div class="nav__dropdown">
-          <a href="#" class="nav__link" aria-haspopup="true">Services</a>
+          <a href="#" class="nav__link" aria-haspopup="true" data-i18n="nav_services">Services</a>
           <div class="nav__dropdown-menu">
-            <a href="services-sound.html">Sound Rental</a>
-            <a href="services-lighting.html">Lighting Rental</a>
+            <a href="services-sound.html" data-i18n="nav_sound">Sound Rental</a>
+            <a href="services-lighting.html" data-i18n="nav_lighting">Lighting Rental</a>
           </div>
         </div>
-        <a href="portfolio.html" class="nav__link">Portfolio</a>
-        <a href="about.html" class="nav__link">About</a>
-        <a href="blog.html" class="nav__link">Blog</a>
-        <a href="contact.html" class="nav__cta">Get a Quote</a>
+        <a href="portfolio.html" class="nav__link" data-i18n="nav_portfolio">Portfolio</a>
+        <a href="about.html" class="nav__link" data-i18n="nav_about">About</a>
+        <a href="blog.html" class="nav__link" data-i18n="nav_blog">Blog</a>
+        <a href="contact.html" class="nav__cta" data-i18n="nav_contact">Get a Quote</a>
+        <div class="lang-switch">
+          <button class="lang-switch__btn active" data-lang="en">EN</button>
+          <span class="lang-switch__sep">|</span>
+          <button class="lang-switch__btn" data-lang="ru">RU</button>
+        </div>
       </div>
       <div class="nav__burger" aria-label="Toggle menu">
         <span></span><span></span><span></span>
@@ -90,11 +104,11 @@
     <!-- REPLACE: реальное фото мероприятия -->
     <div class="hero__bg" role="img" aria-label="Corporate event with professional lighting setup in Dubai"></div>
     <div class="container hero__content">
-      <h1 class="hero__title">Sound & Light That Transforms Events</h1>
-      <p class="hero__subtitle">Boutique audio & lighting specialists in Dubai — weddings, corporate events & private parties across the UAE</p>
+      <h1 class="hero__title" data-i18n="hero_title">Sound & Light That Transforms Events</h1>
+      <p class="hero__subtitle" data-i18n="hero_subtitle">Boutique audio & lighting specialists in Dubai — weddings, corporate events & private parties across the UAE</p>
       <div class="hero__buttons">
-        <a href="contact.html" class="btn-primary btn-pulse">Get a Quote &rarr;</a>
-        <a href="#portfolio" class="btn-secondary">See Our Work</a>
+        <a href="contact.html" class="btn-primary btn-pulse" data-i18n="hero_cta_primary">Get a Quote &rarr;</a>
+        <a href="#portfolio" class="btn-secondary" data-i18n="hero_cta_secondary">See Our Work</a>
       </div>
     </div>
     <div class="hero__scroll-hint"><span></span></div>
@@ -102,7 +116,7 @@
 
   <!-- ========== TRUST BAR ========== -->
   <div class="trust-bar">
-    <p class="trust-bar__label">Equipment we trust</p>
+    <p class="trust-bar__label" data-i18n="trust_label">Equipment we trust</p>
     <div class="trust-bar__track">
       <span>L-Acoustics</span>
       <span>d&b Audiotechnik</span>
@@ -135,8 +149,8 @@
   <!-- ========== SERVICES OVERVIEW ========== -->
   <section class="services-overview">
     <div class="container">
-      <p class="section-label reveal">Our Expertise</p>
-      <h2 class="reveal">What We Do</h2>
+      <p class="section-label reveal" data-i18n="services_label">Our Expertise</p>
+      <h2 class="reveal" data-i18n="services_title">What We Do</h2>
       <div class="services-overview__grid">
         <!-- Sound Card -->
         <div class="card service-card reveal">
@@ -148,9 +162,9 @@
               <path d="M37 21c2.5 1.8 4 4.5 4 7s-1.5 5.2-4 7" stroke="#E8FF47" stroke-width="1.5" stroke-linecap="round"/>
             </svg>
           </div>
-          <h3>Professional Sound</h3>
-          <p>From intimate private parties to large corporate conferences — crystal-clear audio tailored to your venue and audience. We bring top-tier PA systems, mixing consoles, and our expertise to every event.</p>
-          <a href="services-sound.html" class="btn-text">Explore Sound Services &rarr;</a>
+          <h3 data-i18n="services_sound_title">Professional Sound</h3>
+          <p data-i18n="services_sound_text">From intimate private parties to large corporate conferences — crystal-clear audio tailored to your venue and audience. We bring top-tier PA systems, mixing consoles, and our expertise to every event.</p>
+          <a href="services-sound.html" class="btn-text" data-i18n="services_sound_link">Explore Sound Services &rarr;</a>
         </div>
         <!-- Lighting Card -->
         <div class="card service-card reveal">
@@ -160,9 +174,9 @@
               <path d="M28 16l2 8h8l-6.5 5 2.5 8L28 32l-6 5 2.5-8L18 24h8l2-8z" fill="#E8FF47"/>
             </svg>
           </div>
-          <h3>Event Lighting</h3>
-          <p>The right light changes everything. Moving heads, wash lights, uplighting, and atmospheric effects — designed to set the exact mood your event deserves.</p>
-          <a href="services-lighting.html" class="btn-text">Explore Lighting Services &rarr;</a>
+          <h3 data-i18n="services_lighting_title">Event Lighting</h3>
+          <p data-i18n="services_lighting_text">The right light changes everything. Moving heads, wash lights, uplighting, and atmospheric effects — designed to set the exact mood your event deserves.</p>
+          <a href="services-lighting.html" class="btn-text" data-i18n="services_lighting_link">Explore Lighting Services &rarr;</a>
         </div>
       </div>
     </div>
@@ -171,29 +185,29 @@
   <!-- ========== WHY SSBD ========== -->
   <section class="why-ssbd">
     <div class="container">
-      <p class="section-label section-label--light reveal">The Difference</p>
-      <h2 class="reveal">Why Same Same But Different?</h2>
+      <p class="section-label section-label--light reveal" data-i18n="why_label">The Difference</p>
+      <h2 class="reveal" data-i18n="why_title">Why Same Same But Different?</h2>
       <div class="why-ssbd__grid">
         <div class="why-card reveal">
           <div class="why-card__icon">
             <svg viewBox="0 0 22 22" fill="none"><path d="M11 2a9 9 0 100 18 9 9 0 000-18zm0 4v5l3.5 2" stroke="#E8FF47" stroke-width="1.5" stroke-linecap="round"/></svg>
           </div>
-          <h3>Boutique, Not Corporate</h3>
-          <p>We're a small team of three. That means you deal directly with the people doing the work — no account managers, no miscommunication.</p>
+          <h3 data-i18n="why_1_title">Boutique, Not Corporate</h3>
+          <p data-i18n="why_1_text">We're a small team of three. That means you deal directly with the people doing the work — no account managers, no miscommunication.</p>
         </div>
         <div class="why-card reveal">
           <div class="why-card__icon">
             <svg viewBox="0 0 22 22" fill="none"><path d="M3 11h4l3-8 3 16 3-8h4" stroke="#E8FF47" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
-          <h3>Sound & Light Only</h3>
-          <p>We don't do everything. We do two things exceptionally well. No LED screens, no staging, no SFX packages — just perfect sound and precise lighting.</p>
+          <h3 data-i18n="why_2_title">Sound & Light Only</h3>
+          <p data-i18n="why_2_text">We don't do everything. We do two things exceptionally well. No LED screens, no staging, no SFX packages — just perfect sound and precise lighting.</p>
         </div>
         <div class="why-card reveal">
           <div class="why-card__icon">
             <svg viewBox="0 0 22 22" fill="none"><path d="M11 1v4m0 12v4M1 11h4m12 0h4m-3.07-7.07l-2.83 2.83m-8.2 8.2l-2.83 2.83m0-13.86l2.83 2.83m8.2 8.2l2.83 2.83" stroke="#E8FF47" stroke-width="1.5" stroke-linecap="round"/></svg>
           </div>
-          <h3>Every Event Is Different</h3>
-          <p>We listen first. Each setup is tailored to your venue, your crowd, and your vision. Cookie-cutter solutions are not our style.</p>
+          <h3 data-i18n="why_3_title">Every Event Is Different</h3>
+          <p data-i18n="why_3_text">We listen first. Each setup is tailored to your venue, your crowd, and your vision. Cookie-cutter solutions are not our style.</p>
         </div>
       </div>
     </div>
@@ -202,8 +216,8 @@
   <!-- ========== PORTFOLIO PREVIEW ========== -->
   <section class="portfolio-preview" id="portfolio">
     <div class="container">
-      <p class="section-label reveal">Portfolio</p>
-      <h2 class="reveal">Recent Work</h2>
+      <p class="section-label reveal" data-i18n="portfolio_label">Portfolio</p>
+      <h2 class="reveal" data-i18n="portfolio_title">Recent Work</h2>
       <div class="portfolio-preview__grid">
         <!-- REPLACE: реальное фото мероприятия -->
         <div class="portfolio-card reveal">
@@ -231,7 +245,7 @@
         </div>
       </div>
       <div style="text-align:center">
-        <a href="portfolio.html" class="btn-secondary--dark btn-secondary">View All Projects &rarr;</a>
+        <a href="portfolio.html" class="btn-secondary--dark btn-secondary" data-i18n="portfolio_btn">View All Projects &rarr;</a>
       </div>
     </div>
   </section>
@@ -240,10 +254,10 @@
   <section class="testimonial">
     <div class="container">
       <div class="testimonial__inner reveal">
-        <div class="testimonial__quote">
+        <div class="testimonial__quote" data-i18n="testimonial_quote">
           The sound at our product launch was flawless. The team understood exactly what we needed and delivered without any stress on our end.
         </div>
-        <p class="testimonial__author">— Event Manager, Dubai <!-- REPLACE: реальный отзыв --></p>
+        <p class="testimonial__author" data-i18n="testimonial_author">— Event Manager, Dubai</p>
       </div>
     </div>
   </section>
@@ -251,9 +265,9 @@
   <!-- ========== FINAL CTA ========== -->
   <section class="cta-final">
     <div class="container">
-      <h2 class="reveal">Ready to make your event unforgettable?</h2>
-      <p class="reveal">Tell us about your event and we'll get back to you within 24 hours.</p>
-      <a href="contact.html" class="btn-primary btn-pulse reveal">Get a Free Quote &rarr;</a>
+      <h2 class="reveal" data-i18n="cta_title">Ready to make your event unforgettable?</h2>
+      <p class="reveal" data-i18n="cta_subtitle">Tell us about your event and we'll get back to you within 24 hours.</p>
+      <a href="contact.html" class="btn-primary btn-pulse reveal" data-i18n="cta_btn">Get a Free Quote &rarr;</a>
     </div>
   </section>
 
@@ -297,6 +311,7 @@
     <svg viewBox="0 0 32 32" fill="currentColor"><path d="M16 3C8.82 3 3 8.82 3 16c0 2.29.6 4.5 1.74 6.45L3 29l6.75-1.72A12.93 12.93 0 0016 29c7.18 0 13-5.82 13-13S23.18 3 16 3zm0 23.5c-2.07 0-4.1-.56-5.87-1.63l-.42-.25-4.35 1.14 1.16-4.24-.28-.44A10.46 10.46 0 014.5 16c0-6.35 5.15-11.5 11.5-11.5S27.5 9.65 27.5 16 22.35 26.5 16 26.5zm6.3-8.6c-.35-.17-2.04-1.01-2.36-1.12-.32-.12-.55-.17-.78.17s-.9 1.12-1.1 1.35c-.2.23-.4.26-.75.09-.35-.18-1.47-.54-2.8-1.73-1.04-.92-1.73-2.06-1.94-2.41-.2-.35-.02-.54.15-.71.16-.16.35-.4.52-.6.18-.2.23-.35.35-.58.12-.23.06-.43-.03-.6-.09-.18-.78-1.88-1.07-2.57-.28-.68-.57-.58-.78-.59h-.67c-.23 0-.6.09-.92.43-.32.35-1.2 1.17-1.2 2.85s1.23 3.3 1.4 3.53c.18.23 2.43 3.7 5.88 5.19.82.35 1.46.57 1.96.73.82.26 1.57.22 2.16.14.66-.1 2.04-.83 2.33-1.64.29-.8.29-1.49.2-1.64-.09-.14-.32-.23-.67-.4z"/></svg>
   </a>
 
+  <script src="js/translations.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
