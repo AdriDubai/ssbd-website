@@ -7,8 +7,9 @@ const auth = require('../middleware/auth');
 const router = express.Router();
 
 const UPLOAD_DIR = path.join(__dirname, '../../uploads/images');
-const ALLOWED_TYPES = ['image/jpeg', 'image/png', 'image/webp', 'video/mp4'];
-const MAX_SIZE = 10 * 1024 * 1024; // 10MB
+const VIDEO_DIR = path.join(__dirname, '../../uploads/videos');
+const ALLOWED_TYPES = ['image/jpeg', 'image/png', 'image/webp', 'video/mp4', 'video/quicktime', 'video/webm'];
+const MAX_SIZE = 200 * 1024 * 1024; // 200MB
 
 const upload = multer({
   dest: path.join(__dirname, '../tmp'),
