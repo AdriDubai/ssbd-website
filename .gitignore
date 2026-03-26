@@ -6,4 +6,3 @@ node_modules/
 admin/.env
 admin/tmp/
 uploads/
-data/*.json

@@ -83,4 +83,4 @@ function deployToGitHub() {
   });
 }
 
-module.exports = { deployToGitHub };
+module.exports = { deployToGitHub, regenerateTranslationsJS };
