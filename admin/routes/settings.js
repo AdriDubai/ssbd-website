@@ -2,7 +2,7 @@ const express = require('express');
 const fs = require('fs');
 const path = require('path');
 const auth = require('../middleware/auth');
-const { publishAfterTranslationsSave, publishAfterContentSave } = require('../utils/auto-publish');
+const { deployToGitHub } = require('../utils/auto-publish');
 const router = express.Router();
 
 const DATA_PATH = path.join(__dirname, '../../data/settings.json');
@@ -28,7 +28,7 @@ router.put('/', auth, (req, res) => {
   const current = readJSON(DATA_PATH);
   const updated = { ...current, ...req.body, updatedAt: new Date().toISOString() };
   writeJSON(DATA_PATH, updated);
-  publishAfterContentSave('settings');
+  deployToGitHub();
   res.json({ success: true });
 });
 
@@ -39,7 +39,7 @@ router.get('/translations', auth, (req, res) => {
 
 router.put('/translations', auth, (req, res) => {
   writeJSON(TRANSLATIONS_PATH, req.body);
-  publishAfterTranslationsSave(req.body);
+  deployToGitHub();
   res.json({ success: true });
 });
 
