@@ -20,6 +20,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .lang-switch{display:flex;align-items:center;gap:0;margin-left:16px}
+    .lang-switch__btn{background:none;border:none;color:rgba(255,255,255,.4);font-size:.8rem;font-weight:600;letter-spacing:.04em;padding:6px 8px;cursor:pointer;transition:color .2s}
+    .lang-switch__btn.active{color:#E8FF47}
+    .lang-switch__btn:hover{color:rgba(255,255,255,.8)}
+    .lang-switch__sep{color:rgba(255,255,255,.15);font-size:.75rem;user-select:none}
+  </style>
 </head>
 <body>
 
@@ -28,18 +35,23 @@
     <div class="container nav__inner">
       <a href="/" class="nav__logo"><img src="assets/logo.svg" alt="SSBD" width="120" height="32"></a>
       <div class="nav__links">
-        <div class="nav__dropdown">
-          <a href="#" class="nav__link">Services</a>
-          <div class="nav__dropdown-menu">
-            <a href="services-sound.html">Sound Rental</a>
-            <a href="services-lighting.html">Lighting Rental</a>
+          <div class="nav__dropdown">
+            <a href="#" class="nav__link" data-i18n="nav_services">Services</a>
+            <div class="nav__dropdown-menu">
+              <a href="services-sound.html" data-i18n="nav_sound">Sound Rental</a>
+              <a href="services-lighting.html" data-i18n="nav_lighting">Lighting Rental</a>
+            </div>
+          </div>
+          <a href="portfolio.html" class="nav__link" data-i18n="nav_portfolio">Portfolio</a>
+          <a href="about.html" class="nav__link active" data-i18n="nav_about">About</a>
+          <a href="blog.html" class="nav__link" data-i18n="nav_blog">Blog</a>
+          <a href="contact.html" class="nav__cta" data-i18n="nav_contact">Get a Quote</a>
+          <div class="lang-switch">
+            <button class="lang-switch__btn active" data-lang="en">EN</button>
+            <span class="lang-switch__sep">|</span>
+            <button class="lang-switch__btn" data-lang="ru">RU</button>
           </div>
         </div>
-        <a href="portfolio.html" class="nav__link">Portfolio</a>
-        <a href="about.html" class="nav__link active">About</a>
-        <a href="blog.html" class="nav__link">Blog</a>
-        <a href="contact.html" class="nav__cta">Get a Quote</a>
-      </div>
       <div class="nav__burger" aria-label="Toggle menu"><span></span><span></span><span></span></div>
     </div>
   </nav>
@@ -56,7 +68,7 @@
   <div class="breadcrumbs">
     <div class="container">
       <div class="breadcrumbs__list">
-        <a href="/">Home</a><span class="separator">/</span><span>About</span>
+        <a href="/" data-i18n="breadcrumb_home">Home</a><span class="separator">/</span><span data-i18n="breadcrumb_about">About</span>
       </div>
     </div>
   </div>
@@ -65,13 +77,13 @@
   <section class="about-story">
     <div class="container">
       <div class="page-header" style="padding:40px 0 0">
-        <h1>We Are Same Same But Different</h1>
+        <h1 data-i18n="about_h1">We Are Same Same But Different</h1>
       </div>
       <div class="about-story__content reveal">
-        <p>Same Same But Different started with a simple idea: events in Dubai deserve better sound and lighting — delivered by people who genuinely care about the craft, not just the invoice.</p>
-        <p>We're three partners who met through the events industry in the UAE. Two of us are lighting designers, one is a sound engineer. Together, we bring over a decade of combined experience in live events — from underground music nights to high-profile corporate launches.</p>
-        <p>We launched SSBD in 2023 because we saw a gap in the market. Most AV companies in Dubai are large operations that treat sound and lighting as line items on a spreadsheet. We wanted to offer something different — a boutique service where every event gets the attention it deserves, where the people you talk to are the same people who show up on event day.</p>
-        <p>Our name says it all: every event may seem similar on the surface, but the details make each one unique. We obsess over those details — the way a spotlight catches a speaker at just the right moment, the clarity of a vocalist in a reverberant ballroom, the seamless transition from dinner ambience to dance floor energy.</p>
+        <p data-i18n="about_story_1">Same Same But Different started with a simple idea: events in Dubai deserve better sound and lighting — delivered by people who genuinely care about the craft, not just the invoice.</p>
+        <p data-i18n="about_story_2">We're three partners who met through the events industry in the UAE. Two of us are lighting designers, one is a sound engineer. Together, we bring over a decade of combined experience in live events — from underground music nights to high-profile corporate launches.</p>
+        <p data-i18n="about_story_3">We launched SSBD in 2023 because we saw a gap in the market. Most AV companies in Dubai are large operations that treat sound and lighting as line items on a spreadsheet. We wanted to offer something different — a boutique service where every event gets the attention it deserves, where the people you talk to are the same people who show up on event day.</p>
+        <p data-i18n="about_story_4">Our name says it all: every event may seem similar on the surface, but the details make each one unique. We obsess over those details — the way a spotlight catches a speaker at just the right moment, the clarity of a vocalist in a reverberant ballroom, the seamless transition from dinner ambience to dance floor energy.</p>
       </div>
     </div>
   </section>
@@ -79,27 +91,27 @@
   <!-- Team -->
   <section class="team-section">
     <div class="container">
-      <p class="section-label reveal">The Team</p>
-      <h2 class="reveal">Three Specialists. One Mission.</h2>
+      <p class="section-label reveal" data-i18n="about_team_label">The Team</p>
+      <h2 class="reveal" data-i18n="about_team_title">Three Specialists. One Mission.</h2>
       <div class="team__grid">
         <!-- REPLACE: имя партнёра и реальное фото -->
         <div class="team-card reveal">
           <div class="team-card__photo" style="background:url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=530&fit=crop') center/cover"></div>
           <h4>[Partner Name]</h4><!-- REPLACE: имя партнёра -->
-          <p class="team-card__role">Sound Engineer & Partner</p>
-          <p>The ears behind every event. Brings years of experience in live sound mixing and system design — from intimate dinners to stadium shows. Obsessed with clean gain structure and making every word heard.</p>
+          <p class="team-card__role" data-i18n="about_role_sound">Sound Engineer & Partner</p>
+          <p data-i18n="about_bio_1">The ears behind every event. Brings years of experience in live sound mixing and system design — from intimate dinners to stadium shows. Obsessed with clean gain structure and making every word heard.</p>
         </div>
         <div class="team-card reveal">
           <div class="team-card__photo" style="background:url('https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=530&fit=crop') center/cover"></div>
           <h4>[Partner Name]</h4><!-- REPLACE: имя партнёра -->
-          <p class="team-card__role">Lighting Designer & Partner</p>
-          <p>The creative force behind our lighting designs. Programmes every show from scratch and has an eye for colour, movement, and timing that turns venues into visual experiences.</p>
+          <p class="team-card__role" data-i18n="about_role_ld">Lighting Designer & Partner</p>
+          <p data-i18n="about_bio_2">The creative force behind our lighting designs. Programmes every show from scratch and has an eye for colour, movement, and timing that turns venues into visual experiences.</p>
         </div>
         <div class="team-card reveal">
           <div class="team-card__photo" style="background:url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=530&fit=crop') center/cover"></div>
           <h4>[Partner Name]</h4><!-- REPLACE: имя партнёра -->
-          <p class="team-card__role">Lighting Technician & Partner</p>
-          <p>The hands that make it all happen. Handles rigging, installation, and on-site operations with precision. If there's a tricky venue or a tight load-in window, this is who you want on the ground.</p>
+          <p class="team-card__role" data-i18n="about_role_lt">Lighting Technician & Partner</p>
+          <p data-i18n="about_bio_3">The hands that make it all happen. Handles rigging, installation, and on-site operations with precision. If there's a tricky venue or a tight load-in window, this is who you want on the ground.</p>
         </div>
       </div>
     </div>
@@ -108,13 +120,13 @@
   <!-- Philosophy -->
   <section class="philosophy">
     <div class="container">
-      <p class="section-label reveal">Our Approach</p>
-      <h2 class="reveal">Our Philosophy</h2>
+      <p class="section-label reveal" data-i18n="about_phil_label">Our Approach</p>
+      <h2 class="reveal" data-i18n="about_phil_title">Our Philosophy</h2>
       <div class="philosophy__content reveal">
-        <p>We believe that sound and lighting are not afterthoughts — they're core elements of any event experience. When done right, they're invisible. Nobody points at a speaker and says "great sound." But everyone feels it. They feel the energy of a room, the clarity of a speech, the emotional shift when the lights change.</p>
-        <p>That's what we aim for: technical excellence that serves the moment. We don't show off with unnecessary complexity or gear for the sake of gear. We match the equipment and design to the event — nothing more, nothing less.</p>
-        <p>Being a small team is our strength. When you hire SSBD, you work directly with us from the first email to the last cable wrap. There's no telephone game between sales, project management, and the crew on the ground. We are the crew. We know your event because we've been involved since day one.</p>
-        <p>This personal approach also means we're selective about the events we take on. We don't overcommit. Every event on our calendar gets our full attention, and we have the capacity to handle last-minute changes or creative requests without breaking a sweat.</p>
+        <p data-i18n="about_phil_1">We believe that sound and lighting are not afterthoughts — they're core elements of any event experience. When done right, they're invisible. Nobody points at a speaker and says "great sound." But everyone feels it. They feel the energy of a room, the clarity of a speech, the emotional shift when the lights change.</p>
+        <p data-i18n="about_phil_2">That's what we aim for: technical excellence that serves the moment. We don't show off with unnecessary complexity or gear for the sake of gear. We match the equipment and design to the event — nothing more, nothing less.</p>
+        <p data-i18n="about_phil_3">Being a small team is our strength. When you hire SSBD, you work directly with us from the first email to the last cable wrap. There's no telephone game between sales, project management, and the crew on the ground. We are the crew. We know your event because we've been involved since day one.</p>
+        <p data-i18n="about_phil_4">This personal approach also means we're selective about the events we take on. We don't overcommit. Every event on our calendar gets our full attention, and we have the capacity to handle last-minute changes or creative requests without breaking a sweat.</p>
       </div>
     </div>
   </section>
@@ -125,19 +137,19 @@
       <div class="stats__grid">
         <div class="reveal">
           <div class="stat__number">50+</div>
-          <div class="stat__label">Events delivered</div>
+          <div class="stat__label" data-i18n="about_stat_events">Events delivered</div>
         </div>
         <div class="reveal">
           <div class="stat__number">3</div>
-          <div class="stat__label">Passionate specialists</div>
+          <div class="stat__label" data-i18n="about_stat_team">Passionate specialists</div>
         </div>
         <div class="reveal">
           <div class="stat__number">1.5</div>
-          <div class="stat__label">Years in the UAE</div>
+          <div class="stat__label" data-i18n="about_stat_years">Years in the UAE</div>
         </div>
         <div class="reveal">
           <div class="stat__number">0</div>
-          <div class="stat__label">Cut corners</div>
+          <div class="stat__label" data-i18n="about_stat_corners">Cut corners</div>
         </div>
       </div>
     </div>
@@ -146,8 +158,8 @@
   <!-- CTA Final -->
   <section class="cta-final">
     <div class="container">
-      <h2 class="reveal">Want to work with us?</h2>
-      <p class="reveal">Tell us about your event. We'd love to hear what you're planning.</p>
+      <h2 class="reveal" data-i18n="about_cta_title">Want to work with us?</h2>
+      <p class="reveal" data-i18n="about_cta_text">Tell us about your event. We'd love to hear what you're planning.</p>
       <a href="contact.html" class="btn-primary btn-pulse reveal">Get a Free Quote &rarr;</a>
     </div>
   </section>
@@ -158,21 +170,21 @@
       <div class="footer__inner">
         <div class="footer__brand">
           <img src="assets/logo.svg" alt="SSBD" width="100" height="28">
-          <p>Boutique sound & lighting rental for events in Dubai and across the UAE.</p>
+          <p data-i18n="footer_desc">Boutique sound & lighting rental for events in Dubai and across the UAE.</p>
         </div>
         <div class="footer__links">
-          <h4>Services</h4>
+          <h4 data-i18n="footer_services">Services</h4>
           <a href="services-sound.html">Sound Rental</a>
           <a href="services-lighting.html">Lighting Rental</a>
         </div>
         <div class="footer__links">
-          <h4>Company</h4>
+          <h4 data-i18n="footer_company">Company</h4>
           <a href="portfolio.html">Portfolio</a>
           <a href="about.html">About Us</a>
           <a href="blog.html">Blog</a>
         </div>
         <div class="footer__links">
-          <h4>Contact</h4>
+          <h4 data-i18n="footer_contact">Contact</h4>
           <a href="mailto:hello@samesamebutdifferent.ae">hello@samesamebutdifferent.ae</a>
           <a href="https://wa.me/971XXXXXXXXX" target="_blank" rel="noopener">WhatsApp</a>
           <a href="https://instagram.com/samesamebutdifferent" target="_blank" rel="noopener">Instagram</a>
@@ -189,6 +201,7 @@
     <svg viewBox="0 0 32 32" fill="currentColor"><path d="M16 3C8.82 3 3 8.82 3 16c0 2.29.6 4.5 1.74 6.45L3 29l6.75-1.72A12.93 12.93 0 0016 29c7.18 0 13-5.82 13-13S23.18 3 16 3zm0 23.5c-2.07 0-4.1-.56-5.87-1.63l-.42-.25-4.35 1.14 1.16-4.24-.28-.44A10.46 10.46 0 014.5 16c0-6.35 5.15-11.5 11.5-11.5S27.5 9.65 27.5 16 22.35 26.5 16 26.5zm6.3-8.6c-.35-.17-2.04-1.01-2.36-1.12-.32-.12-.55-.17-.78.17s-.9 1.12-1.1 1.35c-.2.23-.4.26-.75.09-.35-.18-1.47-.54-2.8-1.73-1.04-.92-1.73-2.06-1.94-2.41-.2-.35-.02-.54.15-.71.16-.16.35-.4.52-.6.18-.2.23-.35.35-.58.12-.23.06-.43-.03-.6-.09-.18-.78-1.88-1.07-2.57-.28-.68-.57-.58-.78-.59h-.67c-.23 0-.6.09-.92.43-.32.35-1.2 1.17-1.2 2.85s1.23 3.3 1.4 3.53c.18.23 2.43 3.7 5.88 5.19.82.35 1.46.57 1.96.73.82.26 1.57.22 2.16.14.66-.1 2.04-.83 2.33-1.64.29-.8.29-1.49.2-1.64-.09-.14-.32-.23-.67-.4z"/></svg>
   </a>
 
+  <script src="js/translations.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

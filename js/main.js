@@ -43,19 +43,29 @@ document.addEventListener('DOMContentLoaded', () => {
   /* --- Scroll Reveal (Intersection Observer) --- */
   const reveals = document.querySelectorAll('.reveal');
   if (reveals.length) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
 
-    reveals.forEach((el, i) => {
-      el.style.transitionDelay = `${(i % 6) * 0.1}s`;
-      observer.observe(el);
-    });
+      reveals.forEach((el, i) => {
+        el.style.transitionDelay = `${(i % 6) * 0.1}s`;
+        observer.observe(el);
+      });
+
+      // Safety net: force all reveals visible after 3s
+      setTimeout(() => {
+        reveals.forEach(el => el.classList.add('visible'));
+      }, 3000);
+    } else {
+      // No IntersectionObserver support — show all immediately
+      reveals.forEach(el => el.classList.add('visible'));
+    }
   }
 
   /* --- Smooth Scroll for Anchor Links --- */

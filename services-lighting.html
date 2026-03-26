@@ -21,6 +21,14 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 
+  <style>
+    .lang-switch{display:flex;align-items:center;gap:0;margin-left:16px}
+    .lang-switch__btn{background:none;border:none;color:rgba(255,255,255,.4);font-size:.8rem;font-weight:600;letter-spacing:.04em;padding:6px 8px;cursor:pointer;transition:color .2s}
+    .lang-switch__btn.active{color:#E8FF47}
+    .lang-switch__btn:hover{color:rgba(255,255,255,.8)}
+    .lang-switch__sep{color:rgba(255,255,255,.15);font-size:.75rem;user-select:none}
+  </style>
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -44,18 +52,23 @@
     <div class="container nav__inner">
       <a href="/" class="nav__logo"><img src="assets/logo.svg" alt="SSBD" width="120" height="32"></a>
       <div class="nav__links">
-        <div class="nav__dropdown">
-          <a href="#" class="nav__link active">Services</a>
-          <div class="nav__dropdown-menu">
-            <a href="services-sound.html">Sound Rental</a>
-            <a href="services-lighting.html">Lighting Rental</a>
+          <div class="nav__dropdown">
+            <a href="#" class="nav__link active" data-i18n="nav_services">Services</a>
+            <div class="nav__dropdown-menu">
+              <a href="services-sound.html" data-i18n="nav_sound">Sound Rental</a>
+              <a href="services-lighting.html" data-i18n="nav_lighting">Lighting Rental</a>
+            </div>
+          </div>
+          <a href="portfolio.html" class="nav__link" data-i18n="nav_portfolio">Portfolio</a>
+          <a href="about.html" class="nav__link" data-i18n="nav_about">About</a>
+          <a href="blog.html" class="nav__link" data-i18n="nav_blog">Blog</a>
+          <a href="contact.html" class="nav__cta" data-i18n="nav_contact">Get a Quote</a>
+          <div class="lang-switch">
+            <button class="lang-switch__btn active" data-lang="en">EN</button>
+            <span class="lang-switch__sep">|</span>
+            <button class="lang-switch__btn" data-lang="ru">RU</button>
           </div>
         </div>
-        <a href="portfolio.html" class="nav__link">Portfolio</a>
-        <a href="about.html" class="nav__link">About</a>
-        <a href="blog.html" class="nav__link">Blog</a>
-        <a href="contact.html" class="nav__cta">Get a Quote</a>
-      </div>
       <div class="nav__burger" aria-label="Toggle menu"><span></span><span></span><span></span></div>
     </div>
   </nav>
@@ -72,7 +85,7 @@
   <div class="breadcrumbs">
     <div class="container">
       <div class="breadcrumbs__list">
-        <a href="/">Home</a><span class="separator">/</span><span>Services</span><span class="separator">/</span><span>Lighting Rental Dubai</span>
+        <a href="/" data-i18n="breadcrumb_home">Home</a><span class="separator">/</span><span data-i18n="breadcrumb_services">Services</span><span class="separator">/</span><span>Lighting Rental Dubai</span>
       </div>
     </div>
   </div>
@@ -80,9 +93,9 @@
   <!-- Page Header -->
   <div class="page-header">
     <div class="container">
-      <h1>Event Lighting Rental Dubai</h1>
+      <h1 data-i18n="light_h1">Event Lighting Rental Dubai</h1>
       <div class="service-intro">
-        <p>Lighting is what transforms a venue from ordinary to extraordinary. The right combination of colour, intensity, and movement creates atmosphere, guides attention, and makes every moment more memorable. At Same Same But Different, we specialise in event lighting rental across Dubai and the UAE — from elegant uplighting for weddings to dynamic moving head programming for live shows and launches. Our lighting designers don't just set up fixtures — they design an experience. Using equipment from Martin, Chauvet Professional, and controllers like grandMA and Avolites, we craft lighting that complements your event's story. Whether it's a warm, intimate glow for a private dinner or a high-energy light show for a product reveal, we tailor every setup to match the space, the mood, and your vision.</p>
+        <p data-i18n="light_intro">Lighting is what transforms a venue from ordinary to extraordinary. The right combination of colour, intensity, and movement creates atmosphere, guides attention, and makes every moment more memorable. At Same Same But Different, we specialise in event lighting rental across Dubai and the UAE — from elegant uplighting for weddings to dynamic moving head programming for live shows and launches. Our lighting designers don't just set up fixtures — they design an experience. Using equipment from Martin, Chauvet Professional, and controllers like grandMA and Avolites, we craft lighting that complements your event's story. Whether it's a warm, intimate glow for a private dinner or a high-energy light show for a product reveal, we tailor every setup to match the space, the mood, and your vision.</p>
       </div>
     </div>
   </div>
@@ -90,32 +103,32 @@
   <!-- What's Included -->
   <section class="service-detail" style="padding-top:0">
     <div class="container">
-      <p class="section-label reveal">What's Included</p>
-      <h2 class="reveal">Our Lighting Equipment & Services</h2>
+      <p class="section-label reveal" data-i18n="light_whats_label">What's Included</p>
+      <h2 class="reveal" data-i18n="light_whats_title">Our Lighting Equipment & Services</h2>
       <div class="service-what__grid">
         <div class="card service-what__item reveal">
-          <h4>Moving Heads</h4>
-          <p>Beam, spot, and wash moving heads from Martin and Chauvet — for dynamic effects, gobo projections, and dramatic stage looks.</p>
+          <h4 data-i18n="light_moving_title">Moving Heads</h4>
+          <p data-i18n="light_moving_text">Beam, spot, and wash moving heads from Martin and Chauvet — for dynamic effects, gobo projections, and dramatic stage looks.</p>
         </div>
         <div class="card service-what__item reveal">
-          <h4>LED Par Cans</h4>
-          <p>Versatile LED pars for stage washes, colour accents, and general event lighting. Low heat, full colour mixing, and reliable performance.</p>
+          <h4 data-i18n="light_par_title">LED Par Cans</h4>
+          <p data-i18n="light_par_text">Versatile LED pars for stage washes, colour accents, and general event lighting. Low heat, full colour mixing, and reliable performance.</p>
         </div>
         <div class="card service-what__item reveal">
-          <h4>Uplighting</h4>
-          <p>Transform any venue wall, column, or architectural feature with colour. Perfect for weddings, galas, and corporate branding.</p>
+          <h4 data-i18n="light_up_title">Uplighting</h4>
+          <p data-i18n="light_up_text">Transform any venue wall, column, or architectural feature with colour. Perfect for weddings, galas, and corporate branding.</p>
         </div>
         <div class="card service-what__item reveal">
-          <h4>Architectural Lighting</h4>
-          <p>Highlight building facades, outdoor landscapes, and venue features with precision-aimed fixtures for a polished, professional look.</p>
+          <h4 data-i18n="light_arch_title">Architectural Lighting</h4>
+          <p data-i18n="light_arch_text">Highlight building facades, outdoor landscapes, and venue features with precision-aimed fixtures for a polished, professional look.</p>
         </div>
         <div class="card service-what__item reveal">
-          <h4>Haze & Atmospheric Effects</h4>
-          <p>Haze machines make light beams visible and add depth. Essential for any event where lighting is a key visual element.</p>
+          <h4 data-i18n="light_haze_title">Haze & Atmospheric Effects</h4>
+          <p data-i18n="light_haze_text">Haze machines make light beams visible and add depth. Essential for any event where lighting is a key visual element.</p>
         </div>
         <div class="card service-what__item reveal">
-          <h4>Lighting Controller</h4>
-          <p>All shows programmed and operated on grandMA or Avolites consoles by our experienced lighting designers for pixel-perfect control.</p>
+          <h4 data-i18n="light_ctrl_title">Lighting Controller</h4>
+          <p data-i18n="light_ctrl_text">All shows programmed and operated on grandMA or Avolites consoles by our experienced lighting designers for pixel-perfect control.</p>
         </div>
       </div>
     </div>
@@ -124,15 +137,15 @@
   <!-- Event Types -->
   <section class="service-events">
     <div class="container">
-      <p class="section-label reveal">Perfect For</p>
-      <h2 class="reveal">Events We Illuminate</h2>
+      <p class="section-label reveal" data-i18n="light_events_label">Perfect For</p>
+      <h2 class="reveal" data-i18n="light_events_title">Events We Illuminate</h2>
       <div class="service-events__tags">
-        <span class="service-events__tag reveal">Corporate Conferences</span>
-        <span class="service-events__tag reveal">Product Launches</span>
-        <span class="service-events__tag reveal">Gala Dinners</span>
-        <span class="service-events__tag reveal">Private Parties</span>
-        <span class="service-events__tag reveal">Weddings</span>
-        <span class="service-events__tag reveal">Concerts & Live Shows</span>
+        <span class="service-events__tag reveal" data-i18n="event_corporate">Corporate Conferences</span>
+        <span class="service-events__tag reveal" data-i18n="event_launches">Product Launches</span>
+        <span class="service-events__tag reveal" data-i18n="event_gala">Gala Dinners</span>
+        <span class="service-events__tag reveal" data-i18n="event_private">Private Parties</span>
+        <span class="service-events__tag reveal" data-i18n="event_weddings">Weddings</span>
+        <span class="service-events__tag reveal" data-i18n="event_concerts">Concerts & Live Shows</span>
       </div>
     </div>
   </section>
@@ -140,23 +153,23 @@
   <!-- How We Work -->
   <section class="service-process">
     <div class="container">
-      <p class="section-label reveal">How It Works</p>
-      <h2 class="reveal">From Concept to Show</h2>
+      <p class="section-label reveal" data-i18n="light_process_label">How It Works</p>
+      <h2 class="reveal" data-i18n="light_process_title">From Concept to Show</h2>
       <div class="service-process__steps">
         <div class="process-step reveal">
           <div class="process-step__num">1</div>
-          <h4>Brief & Concept</h4>
-          <p>Share your event vision — theme, colours, mood. We create a lighting concept that enhances your event's atmosphere and purpose.</p>
+          <h4 data-i18n="light_step1_title">Brief & Concept</h4>
+          <p data-i18n="light_step1_text">Share your event vision — theme, colours, mood. We create a lighting concept that enhances your event's atmosphere and purpose.</p>
         </div>
         <div class="process-step reveal">
           <div class="process-step__num">2</div>
-          <h4>Site Survey & Plot</h4>
-          <p>We survey the venue, assess rigging points, power availability, and create a detailed lighting plot tailored to the space.</p>
+          <h4 data-i18n="light_step2_title">Site Survey & Plot</h4>
+          <p data-i18n="light_step2_text">We survey the venue, assess rigging points, power availability, and create a detailed lighting plot tailored to the space.</p>
         </div>
         <div class="process-step reveal">
           <div class="process-step__num">3</div>
-          <h4>Install & Operate</h4>
-          <p>Our team installs, focuses, and programs all fixtures. A lighting operator stays on-site throughout the event for live adjustments.</p>
+          <h4 data-i18n="light_step3_title">Install & Operate</h4>
+          <p data-i18n="light_step3_text">Our team installs, focuses, and programs all fixtures. A lighting operator stays on-site throughout the event for live adjustments.</p>
         </div>
       </div>
     </div>
@@ -165,8 +178,8 @@
   <!-- Gallery -->
   <section class="service-gallery">
     <div class="container">
-      <p class="section-label reveal">In Action</p>
-      <h2 class="reveal">Lighting at Our Events</h2>
+      <p class="section-label reveal" data-i18n="light_gallery_label">In Action</p>
+      <h2 class="reveal" data-i18n="light_gallery_title">Lighting at Our Events</h2>
       <div class="service-gallery__grid">
         <!-- REPLACE: реальное фото мероприятия -->
         <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=500&h=375&fit=crop" alt="Event uplighting creating warm ambiance at Dubai gala dinner" loading="lazy" class="reveal">
@@ -182,17 +195,17 @@
   <!-- CTA -->
   <section class="cta-final">
     <div class="container">
-      <h2 class="reveal">Need lighting for your event?</h2>
-      <p class="reveal">Tell us your vision and we'll design a lighting package that brings it to life.</p>
-      <a href="contact.html" class="btn-primary btn-pulse reveal">Request a Lighting Quote &rarr;</a>
+      <h2 class="reveal" data-i18n="light_cta_title">Need lighting for your event?</h2>
+      <p class="reveal" data-i18n="light_cta_text">Tell us your vision and we'll design a lighting package that brings it to life.</p>
+      <a href="contact.html" class="btn-primary btn-pulse reveal" data-i18n="light_cta_btn">Request a Lighting Quote &rarr;</a>
     </div>
   </section>
 
   <!-- FAQ -->
   <section class="faq">
     <div class="container">
-      <p class="section-label reveal">FAQ</p>
-      <h2 class="reveal">Common Questions About Event Lighting</h2>
+      <p class="section-label reveal" data-i18n="light_faq_label">FAQ</p>
+      <h2 class="reveal" data-i18n="light_faq_title">Common Questions About Event Lighting</h2>
       <div class="faq__list">
         <div class="faq__item">
           <button class="faq__question">How much does event lighting rental cost in Dubai?</button>
@@ -231,8 +244,8 @@
   <!-- Related Blog Posts -->
   <section class="related-articles" style="padding-bottom:60px">
     <div class="container">
-      <p class="section-label reveal">From Our Blog</p>
-      <h2 class="reveal">Learn More About Event Lighting</h2>
+      <p class="section-label reveal" data-i18n="light_blog_label">From Our Blog</p>
+      <h2 class="reveal" data-i18n="light_blog_title">Learn More About Event Lighting</h2>
       <div class="related-articles__grid">
         <a href="blog/event-lighting-dubai-tips.html" class="card blog-card reveal">
           <div class="blog-card__body">
@@ -265,21 +278,21 @@
       <div class="footer__inner">
         <div class="footer__brand">
           <img src="assets/logo.svg" alt="SSBD" width="100" height="28">
-          <p>Boutique sound & lighting rental for events in Dubai and across the UAE.</p>
+          <p data-i18n="footer_desc">Boutique sound & lighting rental for events in Dubai and across the UAE.</p>
         </div>
         <div class="footer__links">
-          <h4>Services</h4>
+          <h4 data-i18n="footer_services">Services</h4>
           <a href="services-sound.html">Sound Rental</a>
           <a href="services-lighting.html">Lighting Rental</a>
         </div>
         <div class="footer__links">
-          <h4>Company</h4>
+          <h4 data-i18n="footer_company">Company</h4>
           <a href="portfolio.html">Portfolio</a>
           <a href="about.html">About Us</a>
           <a href="blog.html">Blog</a>
         </div>
         <div class="footer__links">
-          <h4>Contact</h4>
+          <h4 data-i18n="footer_contact">Contact</h4>
           <a href="mailto:hello@samesamebutdifferent.ae">hello@samesamebutdifferent.ae</a>
           <a href="https://wa.me/971XXXXXXXXX" target="_blank" rel="noopener">WhatsApp</a>
           <a href="https://instagram.com/samesamebutdifferent" target="_blank" rel="noopener">Instagram</a>
@@ -296,6 +309,7 @@
     <svg viewBox="0 0 32 32" fill="currentColor"><path d="M16 3C8.82 3 3 8.82 3 16c0 2.29.6 4.5 1.74 6.45L3 29l6.75-1.72A12.93 12.93 0 0016 29c7.18 0 13-5.82 13-13S23.18 3 16 3zm0 23.5c-2.07 0-4.1-.56-5.87-1.63l-.42-.25-4.35 1.14 1.16-4.24-.28-.44A10.46 10.46 0 014.5 16c0-6.35 5.15-11.5 11.5-11.5S27.5 9.65 27.5 16 22.35 26.5 16 26.5zm6.3-8.6c-.35-.17-2.04-1.01-2.36-1.12-.32-.12-.55-.17-.78.17s-.9 1.12-1.1 1.35c-.2.23-.4.26-.75.09-.35-.18-1.47-.54-2.8-1.73-1.04-.92-1.73-2.06-1.94-2.41-.2-.35-.02-.54.15-.71.16-.16.35-.4.52-.6.18-.2.23-.35.35-.58.12-.23.06-.43-.03-.6-.09-.18-.78-1.88-1.07-2.57-.28-.68-.57-.58-.78-.59h-.67c-.23 0-.6.09-.92.43-.32.35-1.2 1.17-1.2 2.85s1.23 3.3 1.4 3.53c.18.23 2.43 3.7 5.88 5.19.82.35 1.46.57 1.96.73.82.26 1.57.22 2.16.14.66-.1 2.04-.83 2.33-1.64.29-.8.29-1.49.2-1.64-.09-.14-.32-.23-.67-.4z"/></svg>
   </a>
 
+  <script src="js/translations.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

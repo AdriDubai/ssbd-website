@@ -455,6 +455,10 @@ section {
   background: var(--color-bg-dark);
   color: #fff;
 }
+.why-ssbd h2,
+.why-ssbd .section-label {
+  color: rgba(255,255,255,0.9);
+}
 .why-ssbd__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

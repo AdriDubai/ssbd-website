@@ -2,6 +2,7 @@ const express = require('express');
 const fs = require('fs');
 const path = require('path');
 const auth = require('../middleware/auth');
+const { publishAfterContentSave } = require('../utils/auto-publish');
 const router = express.Router();
 
 const DATA_PATH = path.join(__dirname, '../../data/pages.json');
@@ -30,6 +31,7 @@ router.put('/:slug', auth, (req, res) => {
   const pages = readPages();
   pages[req.params.slug] = { ...pages[req.params.slug], ...req.body, updatedAt: new Date().toISOString() };
   writePages(pages);
+  publishAfterContentSave('pages');
   res.json({ success: true, page: pages[req.params.slug] });
 });
 

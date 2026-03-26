@@ -2,6 +2,7 @@ const express = require('express');
 const fs = require('fs');
 const path = require('path');
 const auth = require('../middleware/auth');
+const { publishAfterContentSave } = require('../utils/auto-publish');
 const router = express.Router();
 
 const DATA_PATH = path.join(__dirname, '../../data/blog.json');
@@ -35,6 +36,7 @@ router.post('/', auth, (req, res) => {
   };
   articles.unshift(article);
   writeBlog(articles);
+  publishAfterContentSave('blog');
   res.json({ success: true, article });
 });
 
@@ -44,6 +46,7 @@ router.put('/:id', auth, (req, res) => {
   if (idx === -1) return res.status(404).json({ error: 'Article not found' });
   articles[idx] = { ...articles[idx], ...req.body, updatedAt: new Date().toISOString() };
   writeBlog(articles);
+  publishAfterContentSave('blog');
   res.json({ success: true, article: articles[idx] });
 });
 
@@ -51,6 +54,7 @@ router.delete('/:id', auth, (req, res) => {
   let articles = readBlog();
   articles = articles.filter(a => a.id !== req.params.id);
   writeBlog(articles);
+  publishAfterContentSave('blog');
   res.json({ success: true });
 });
 
